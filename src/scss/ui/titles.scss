@@ -1,0 +1,46 @@
+@use "/src/scss/base/variables.scss" as *;
+@use "/src/scss/base/mixins.scss" as *;
+
+.title-h1-italic {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: center;
+  color: $dark;
+}
+
+.title-h1,
+.title-h2,
+.title-h3 {
+  @include title;
+  font-size: 40px;
+}
+
+.title-h3 {
+  font-size: 24px;
+}
+
+@media screen and (min-width: 360px) {
+  .title-h1,
+  .title-h2 {
+    font-size: 32px;
+  }
+
+  .title-h3 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .title-h1,
+  .title-h2 {
+    font-size: 36px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .title-h1-italic {
+    font-size: 32px;
+  }
+}

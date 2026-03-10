@@ -1,0 +1,12 @@
+// libs
+@use "/src/scss/libs/modern-normalize.min.css";
+@use "/src/scss/libs/fonts.css";
+// base
+@use "/src/scss/base/variables.scss";
+@use "/src/scss/base/mixins.scss";
+@use "/src/scss/base/basic.scss";
+// ui
+@use "/src/scss/ui/buttons.scss";
+@use "/src/scss/ui/titles.scss";
+// blocks
+@use "/src/scss/blocks/promo.scss";
