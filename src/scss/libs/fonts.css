@@ -22,21 +22,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-facebook:before {
+.icon-icon-search-outline:before {
   content: "\e900";
-  color: #fff;
 }
-.icon-instagram:before {
+.icon-pinterest:before {
   content: "\e901";
   color: #fff;
 }
-.icon-pinterest:before {
+.icon-instagram:before {
   content: "\e902";
   color: #fff;
 }
-.icon-shopping-bag:before {
+.icon-facebook:before {
   content: "\e903";
+  color: #fff;
 }
-.icon-search-outline:before {
+.icon-shopping-bag:before {
   content: "\e904";
 }
