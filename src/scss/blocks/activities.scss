@@ -1,0 +1,87 @@
+@use "/src/scss/base/variables.scss" as *;
+
+.activities {
+  padding-top: 60px;
+
+  &__wrapper {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  &__img {
+    display: block;
+    margin: 40px auto 0 auto;
+    width: 340px;
+    height: 194px;
+    object-fit: cover;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  &__text {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 16px;
+    color: $dark;
+
+    span {
+      font-weight: 500;
+      color: $ceramic;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .activities {
+    &__wrapper {
+      margin-top: 40px;
+      padding: 0 95px;
+    }
+
+    &__img {
+      width: 530px;
+      height: 304px;
+    }
+
+    &__text {
+      margin-top: 25px;
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .activities {
+    &__wrapper {
+      margin-top: 80px;
+      flex-direction: row;
+      padding: 0;
+    }
+
+    &__item {
+      padding: 0 10px;
+    }
+
+    &__img {
+      width: 100%;
+      margin-top: 60px;
+    }
+
+    &__text {
+      &_fixed {
+        width: 556px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .activities {
+    padding-top: 100px;
+
+    &__text {
+      margin-top: 30px;
+    }
+  }
+}
