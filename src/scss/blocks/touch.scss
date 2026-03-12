@@ -1,0 +1,81 @@
+@use "/src/scss/base/variables.scss" as *;
+
+.touch {
+  padding-top: 60px;
+
+  &__wrapper {
+    margin-top: 60px;
+  }
+
+  &__img {
+    display: none;
+  }
+
+  &__btn {
+    margin-top: 20px;
+  }
+
+  &__vase {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .touch {
+    &__wrapper {
+      position: relative;
+      margin-top: 45px;
+    }
+
+    &__vase {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 85px;
+      height: 85px;
+      object-fit: cover;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .touch {
+    &__wrapper {
+      margin-top: 80px;
+      display: flex;
+      column-gap: 40px;
+    }
+
+    &__img {
+      display: block;
+      width: 550px;
+      height: 100%;
+      object-fit: cover;
+
+      img {
+        width: 100%;
+        box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .touch {
+    padding-top: 100px;
+
+    &__wrapper {
+      column-gap: 147px;
+    }
+
+    &__img {
+      width: 573px;
+      height: 356px;
+    }
+
+    &__vase {
+      right: 65px;
+    }
+  }
+}
