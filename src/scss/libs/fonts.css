@@ -1,42 +1,73 @@
 @font-face {
-  font-family: "icomoon";
-  src: url("/src/fonts/icomoon.woff") format("woff");
+  font-family: "fontello";
+  src: url("/src/fonts/fontello.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-  font-display: block;
 }
-
-[class^="icon-"],
-[class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icomoon" !important;
-  speak: never;
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?10170869#fontello') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "fontello";
   font-style: normal;
   font-weight: normal;
+  speak: never;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
 
-  /* Better Font Rendering =========== */
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.icon-icon-search-outline:before {
-  content: "\e900";
-}
 .icon-pinterest:before {
-  content: "\e901";
-  color: #fff;
-}
+  content: "\e802";
+} /* '' */
 .icon-instagram:before {
-  content: "\e902";
-  color: #fff;
-}
+  content: "\e803";
+} /* '' */
 .icon-facebook:before {
-  content: "\e903";
-  color: #fff;
-}
+  content: "\e804";
+} /* '' */
 .icon-shopping-bag:before {
-  content: "\e904";
-}
+  content: "\e805";
+} /* '' */
+.icon-search-outline-icon:before {
+  content: "\e806";
+} /* '' */
+.icon-right-arrow:before {
+  content: "\e807";
+} /* '' */
+.icon-left-arrow:before {
+  content: "\e808";
+} /* '' */

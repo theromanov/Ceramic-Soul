@@ -41,14 +41,13 @@ body {
 }
 
 ::selection {
-  //   background-color: gold;
   background-color: rgb(198, 140, 98, 0.6);
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
-  -webkit-text-fill-color: #31b0dd;
+  -webkit-text-fill-color: $dark;
   -webkit-box-shadow: 0 0 0px 40rem #ffff inset;
 }
 
