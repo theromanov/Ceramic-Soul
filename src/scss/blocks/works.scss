@@ -1,0 +1,129 @@
+@use "/src/scss/base/variables.scss" as *;
+
+.works {
+  padding-top: 60px;
+
+  &__wrapper {
+    margin-top: 40px;
+    position: relative;
+  }
+
+  &__slide {
+    img {
+      margin: 0 auto;
+      width: 340px;
+      height: 223px;
+      object-fit: cover;
+    }
+  }
+
+  &__button-prev,
+  &__button-next {
+    display: none;
+  }
+
+  .swiper-pagination {
+    &-bullet {
+      width: 10px;
+      height: 10px;
+      background-color: $dark;
+      border-radius: 0;
+      opacity: 1;
+
+      &-active {
+        background-color: $ceramic;
+      }
+    }
+  }
+
+  .swiper-pagination-fraction,
+  .swiper-pagination-custom,
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: -35px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .works {
+    &__wrapper {
+      margin-top: 45px;
+    }
+
+    &__slide {
+      img {
+        width: 400px;
+        height: 265px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .works {
+    &__wrapper {
+      margin-top: 80px;
+      padding: 0 45px;
+    }
+
+    &__button-prev,
+    &__button-next {
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 0;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+
+      &::before {
+        margin: 0;
+      }
+    }
+
+    &__button-prev {
+      left: 5px;
+    }
+
+    &__button-next {
+      right: 5px;
+    }
+
+    .icon-left-arrow,
+    .icon-right-arrow {
+      font-size: 22px;
+    }
+
+    .swiper-pagination-fraction,
+    .swiper-pagination-custom,
+    .swiper-horizontal > .swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal {
+      bottom: -30px;
+    }
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .works {
+    padding-top: 100px;
+
+    &__wrapper {
+      padding: 0 85px;
+    }
+
+    &__slide {
+      img {
+        margin: 0;
+      }
+    }
+
+    &__button-prev {
+      left: 28px;
+    }
+
+    &__button-next {
+      right: 28px;
+    }
+  }
+}
