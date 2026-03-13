@@ -27,6 +27,19 @@
             <img src="/src/img/promo/potter.jpg" alt="potter" class="promo__potter">
             <div class="container">
                 <header class="header">
+                    <div class="header__menu">
+                        <button class="header__menu-close">
+                            <span></span><span></span>
+                        </button>
+
+                        <nav class="header__menu-nav">
+                            <ul>
+                                <li><a href="#">catalog</a></li>
+                                <li><a href="#">blog</a></li>
+                                <li><a href="#">about</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                     <div class="header__top">
                         <button class="burger">
                             <span></span><span></span><span></span>
@@ -40,7 +53,7 @@
 
                         <div class="header__icons">
                             <a href="#">
-                                <span class="icon-icon-search-outline"></span>
+                                <span class="icon-search-outline-icon"></span>
                             </a>
                             <a href="#">
                                 <span class="icon-shopping-bag"></span>
@@ -123,7 +136,7 @@
                                 <input type="text" id="name" name="name" placeholder="Name" required>
                             </div>
                             <div class="form__block-input">
-                                <label for="name">Email</label>
+                                <label for="email">Email</label>
                                 <input type="email" id="email" name="email" placeholder="Email" required>
                             </div>
                         </fieldset>
@@ -144,7 +157,100 @@
                 </div>
             </div>
         </section>
+
+        <section class="works">
+            <div class="container">
+                <h2 class="title-h2">check out our works</h2>
+
+                <div class="works__wrapper">
+                    <div class="swiper works__slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide works__slide">
+                                <img src="/src/img/works/tea-ceremony.jpg" alt="tea-ceremony">
+                            </div>
+                            <div class="swiper-slide works__slide">
+                                <img src="/src/img/works/tea.jpg" alt="tea">
+                            </div>
+                            <div class="swiper-slide works__slide">
+                                <img src="/src/img/works/tea-on-rock.jpg" alt="tea on rock">
+                            </div>
+                            <div class="swiper-slide works__slide">
+                                <img src="/src/img/works/tea.jpg" alt="tea">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination works__pagination"></div>
+
+                    <button class="icon-left-arrow works__button-prev"></button>
+                    <button class="icon-right-arrow works__button-next"></button>
+                </div>
+
+            </div>
+        </section>
     </main>
+
+
+    <footer class="footer footer_mt">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__cta">
+                    <h2 class="footer__title">newsletter</h2>
+                    <div class="footer__cta-text">Keep up to date with news and promotions</div>
+                    <form action="#" class="footer__form">
+                        <div class="footer__form-email">
+                            <input type="email" id="footer-email" placeholder="Enter your e-mail"
+                                name="footer__form-email" required>
+                        </div>
+
+                        <div class="footer__form-checkbox">
+                            <input type="checkbox" id="footer__form-check" required>
+                            <label for="footer__form-check">I agree with the <a href="#">terms</a></label>
+                        </div>
+
+                        <button class="btn-submit footer__btn">submit</button>
+                    </form>
+                </div>
+
+                <div class="footer__wrapper-nav">
+                    <div class="footer__nav">
+                        <div class="footer__nav-item">
+                            <h3 class="footer__title">discover</h3>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__nav-item">
+                            <h3 class="footer__title">shopping</h3>
+                            <ul>
+                                <li><a href="#">Catalog</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__nav-item">
+                            <h3 class="footer__title">information</h3>
+                            <ul>
+                                <li><a href="#">Terms and Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__social">
+                        <h3 class="footer__title">follow us</h3>
+
+                        <div class="footer__social-wrapper">
+                            <ul>
+                                <li><a href="#"><span class="icon-facebook"></span></a></li>
+                                <li><a href="#"><span class="icon-instagram"></span></a></li>
+                                <li><a href="#"><span class="icon-pinterest"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="footer__copyright">&copy; Copyright <time datetime="2025">2025</time> Ceramic Soul</p>
+        </div>
+    </footer>
 
     <script type="module" src="/src/js/script.js"></script>
 </body>

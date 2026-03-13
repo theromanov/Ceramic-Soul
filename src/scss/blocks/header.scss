@@ -1,6 +1,69 @@
 @use "/src/scss/base/variables.scss" as *;
 
 .header {
+  position: relative;
+  &__menu {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background-color: $light;
+    height: 100vh;
+    width: 100%;
+    transition: 0.7s all;
+
+    &_active {
+      left: 0;
+    }
+
+    &-close {
+      width: 20px;
+      height: 20px;
+      position: relative;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      span {
+        display: block;
+        position: absolute;
+        top: 9px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $dark;
+
+        &:first-child {
+          transform: rotate(135deg);
+        }
+
+        &:last-child {
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    &-nav {
+      margin-top: 50px;
+      ul {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        padding: 0 0 0 14px;
+        row-gap: 25px;
+
+        li {
+          a {
+            font-weight: 400;
+            font-size: 20px;
+            text-transform: uppercase;
+            color: $dark;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
   &__top {
     display: flex;
     justify-content: space-between;
@@ -25,11 +88,16 @@
 
     a {
       text-decoration: none;
+      max-width: 20px;
     }
 
     span {
       font-size: 20px;
       color: $dark;
+
+      &::before {
+        margin: 0;
+      }
     }
 
     span:first-child {
@@ -59,6 +127,9 @@
 
 @media screen and (min-width: 768px) {
   .header {
+    &__menu {
+      display: none;
+    }
     &__nav {
       margin-top: 20px;
       display: block;
