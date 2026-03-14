@@ -1,0 +1,151 @@
+@use "/src/scss/base/variables.scss" as *;
+@use "/src/scss/base/mixins.scss" as *;
+
+.blog {
+  padding-top: 50px;
+  &__title {
+    margin-top: 60px;
+  }
+
+  &__wrapper {
+    margin-top: 60px;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
+    background: $light;
+    border: 1px solid $dark;
+    width: 100%;
+    height: 100%;
+
+    &-cta {
+      display: flex;
+      flex-direction: column;
+      row-gap: 25px;
+      padding: 25px 25px 0 25px;
+    }
+
+    &-img {
+      width: 100%;
+
+      img {
+        max-inline-size: calc(100% + 2px);
+        transform: translateX(-1px) translateY(-1px);
+        object-fit: cover;
+      }
+    }
+
+    &-title {
+      text-align: left;
+    }
+
+    &-text {
+      font-weight: 400;
+      font-size: 16px;
+      color: $dark;
+      padding: 0 25px 25px 25px;
+    }
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .blog {
+    &__card {
+      row-gap: 15px;
+
+      &-top {
+        display: flex;
+        column-gap: 15px;
+      }
+
+      &-cta {
+        width: 50%;
+        padding: 25px 25px 0 0;
+        justify-content: space-between;
+      }
+
+      &-img {
+        width: 335px;
+        height: auto;
+
+        img {
+          width: 100%;
+          height: 240px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .blog {
+    &__wrapper {
+      position: relative;
+      padding: 25px 25px 0 25px;
+      @include angle-decoration;
+    }
+
+    &__card {
+      &-top {
+        column-gap: 25px;
+      }
+
+      &-img {
+        height: auto;
+
+        img {
+          height: 240px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .blog {
+    &__wrapper {
+      flex-direction: row;
+      align-items: start;
+      column-gap: 50px;
+    }
+    &__card {
+      width: 520px;
+
+      &-img {
+        width: 260px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .blog {
+    padding-top: 40px;
+
+    &__title {
+      margin-top: 100px;
+    }
+
+    &__wrapper {
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+
+    &__card {
+      width: 670px;
+
+      &-img {
+        width: 335px;
+      }
+    }
+  }
+}
