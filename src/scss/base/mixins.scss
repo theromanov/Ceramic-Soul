@@ -22,3 +22,17 @@
   border-radius: 2px;
   cursor: pointer;
 }
+
+@mixin angle-decoration {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    border: 1px solid $dark;
+    border-bottom: 0;
+    border-right: 0;
+  }
+}
