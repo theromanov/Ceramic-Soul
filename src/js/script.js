@@ -3,6 +3,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import JustValidate from "just-validate";
 import "/src/scss/style.scss";
 
 const close = document.querySelector(".header__menu-close"),
@@ -61,4 +62,128 @@ try {
   });
 
   contents.forEach((c, i) => (c.style.display = i === 0 ? "flex" : "none"));
+} catch (e) {}
+
+try {
+  const validator = new JustValidate(".form");
+
+  validator
+    .addField("#name", [
+      {
+        rule: "required",
+      },
+      {
+        rule: "minLength",
+        value: 2,
+      },
+    ])
+    .addField("#email", [
+      {
+        rule: "required",
+      },
+      {
+        rule: "email",
+      },
+      {
+        rule: "minLength",
+        value: 3,
+      },
+    ])
+    .addField("#textarea", [
+      {
+        rule: "required",
+      },
+      {
+        rule: "minLength",
+        value: 5,
+      },
+    ])
+    .addField(
+      "#checkbox",
+      [
+        {
+          rule: "required",
+          errorMessage: "Mark the box",
+        },
+      ],
+      {
+        errorsContainer: document
+          .querySelector("#checkbox")
+          .parentElement.parentElement.querySelector(
+            ".errors-checkbox-container",
+          ),
+      },
+    )
+    .onSuccess((event) => {
+      const form = event.currentTarget;
+      const formData = new FormData(form);
+
+      fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("Success", data);
+          form.reset();
+        });
+    });
+} catch (e) {}
+
+try {
+  const validate = new JustValidate(".footer__form");
+
+  validate
+    .addField(
+      "#footer-email",
+      [
+        {
+          rule: "required",
+        },
+        {
+          rule: "email",
+        },
+        {
+          rule: "minLength",
+          value: 5,
+        },
+      ],
+      {
+        errorsContainer: document
+          .querySelector("#footer-email")
+          .parentElement.parentElement.querySelector(
+            ".error-footer-email-container",
+          ),
+      },
+    )
+    .addField(
+      "#footer__form-check",
+      [
+        {
+          rule: "required",
+          errorMessage: "Mark the box",
+        },
+      ],
+      {
+        errorsContainer: document
+          .querySelector("#footer__form-check")
+          .parentElement.parentElement.querySelector(
+            ".error-footer-checkbox-container",
+          ),
+      },
+    )
+    .onSuccess((event) => {
+      const form = event.currentTarget;
+      const formData = new FormData(form);
+
+      fetch("https://httpbin.org/post", {
+        method: "POST",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("Success", data);
+          form.reset();
+        });
+    });
 } catch (e) {}
