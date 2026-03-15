@@ -24,6 +24,13 @@
         font-size: 14px;
         line-height: 200%;
         color: $dark;
+
+        &:hover,
+        &:focus {
+          border: none;
+          outline: 1px solid $dark;
+          //   cursor: pointer;
+        }
       }
     }
 
@@ -77,6 +84,15 @@
         }
       }
     }
+  }
+
+  .form__block-checkbox .just-validate-error-field {
+    outline: 1px solid $dark;
+  }
+
+  .just-validate-error-field {
+    border: none;
+    outline: 1px solid $ui-error;
   }
 }
 

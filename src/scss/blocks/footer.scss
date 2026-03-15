@@ -161,6 +161,28 @@
   }
 }
 
+.footer__form-email {
+  input.just-validate-error-field {
+    border-bottom: 1px solid $ui-error;
+  }
+
+  input.just-validate-error-field::placeholder {
+    color: $ui-error;
+  }
+}
+
+.footer__form-checkbox {
+  input.just-validate-error-field {
+    border: none;
+    outline: 1px solid $dark;
+  }
+}
+
+.error-footer-email-container,
+.error-footer-checkbox-container {
+  margin-top: 7px;
+}
+
 @media screen and (min-width: 768px) {
   .footer {
     &__wrapper {
